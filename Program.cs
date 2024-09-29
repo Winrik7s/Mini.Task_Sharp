@@ -16,15 +16,43 @@ namespace Mini.Task_Sharp
             Console.WriteLine("Result: " + result);
         }
 
+        //new function
+
         static void Main(string[] wsdctr)
         {
-           Console.Write("Enter a: ");
-           int a = Convert.ToInt32(Console.ReadLine());
+            byte sel;
+            int result = 0;
 
-           Console.Write("Enter b: ");
-           int b = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Enter a: ");
+            int a = Convert.ToInt32(Console.ReadLine());
 
-           Console.ReadLine();
+            Console.Write("Enter b: ");
+            int b = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine();
+
+            Console.WriteLine("Select: " + 
+            "1. Logical multiplication. 2. Logical addition.");
+            
+            Console.Write("You: ");
+            sel = Convert.ToByte(Console.ReadLine());
+            
+            Console.WriteLine();
+
+            if(sel == 1)
+            {
+                Logical_M(ref a, ref b, out result);
+            }
+            else if(sel == 2)
+            {
+                Logical_A(ref a, ref b, out result);
+            }
+            else
+            {
+                Console.WriteLine("Error.");
+            }
+
+            Console.ReadLine();
         }
     }
 }
