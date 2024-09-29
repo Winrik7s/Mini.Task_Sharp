@@ -4,6 +4,18 @@ namespace Mini.Task_Sharp
 {
     public class Program
     {
+        static void Logical_M(ref int x, ref int y, out int result)
+        {
+            result = x & y;
+            Console.WriteLine("Result: " + result);
+        }
+
+        static void Logical_A(ref int x, ref int y, out int result)
+        {
+            result = x | y;
+            Console.WriteLine("Result: " + result);
+        }
+
         static void Main(string[] wsdctr)
         {
            Console.Write("Enter a: ");
@@ -11,9 +23,6 @@ namespace Mini.Task_Sharp
 
            Console.Write("Enter b: ");
            int b = Convert.ToInt32(Console.ReadLine());
-
-           int result = a & b;
-           Console.WriteLine("Result: " + result);
 
            Console.ReadLine();
         }
