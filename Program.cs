@@ -38,10 +38,22 @@ namespace Mini.Task_Sharp
             Console.WriteLine("Result: " + y);
         }
 
-        static void Logical_N(ref int x, out int result)
+        static void Logical_N(ref int x, ref int y, out int resultA, out int resultB)
         {
-            result = ~x;
-            Console.WriteLine("Result: " + (result + 1));
+            resultA = ~x;
+            resultB = ~y;
+
+            Console.WriteLine("Result: " + (resultA + 1));
+            Console.WriteLine("Result: " + (resultB + 1));
+        }
+
+        static void Shift(ref int x, ref int y, out int result)
+        {
+            result = x >> y;
+            Console.WriteLine("Result right: " + result);
+
+            result = x << y;
+            Console.WriteLine("Result left: " + result);
         }
 
         static void Main(string[] wsdctr)
@@ -61,7 +73,7 @@ namespace Mini.Task_Sharp
 
             Console.WriteLine("Select: " + 
             "1. Logical multiplication. 2. Logical addition, 3. Enc_Logical_XOR, " +
-            "4. Swap_Logical_XOR, 5. Logical_N, ");
+            "4. Swap_Logical_XOR, 5. Logical_N, 6. Shift.");
             
             Console.Write("You: ");
             sel = Convert.ToByte(Console.ReadLine());
@@ -86,7 +98,11 @@ namespace Mini.Task_Sharp
             }
             else if(sel == 5)
             {
-                Logical_N(ref a, out result);
+                Logical_N(ref a, ref b, out result, out result2);
+            }
+            else if(sel == 6)
+            {
+                Shift(ref a, ref b, out result);
             }
             else
             {
