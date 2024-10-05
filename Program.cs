@@ -38,6 +38,12 @@ namespace Mini.Task_Sharp
             Console.WriteLine("Result: " + y);
         }
 
+        static void Logical_N(ref int x, out int result)
+        {
+            result = ~x;
+            Console.WriteLine("Result: " + (result + 1));
+        }
+
         static void Main(string[] wsdctr)
         {
             byte sel;
@@ -54,7 +60,8 @@ namespace Mini.Task_Sharp
             Console.WriteLine();
 
             Console.WriteLine("Select: " + 
-            "1. Logical multiplication. 2. Logical addition, 3. Enc_Logical_XOR, 4. Swap_Logical_XOR, ");
+            "1. Logical multiplication. 2. Logical addition, 3. Enc_Logical_XOR, " +
+            "4. Swap_Logical_XOR, 5. Logical_N, ");
             
             Console.Write("You: ");
             sel = Convert.ToByte(Console.ReadLine());
@@ -76,6 +83,10 @@ namespace Mini.Task_Sharp
             else if(sel == 4)
             {
                 Swap_Logical_XOR(ref a, ref b, out result, out result2);
+            }
+            else if(sel == 5)
+            {
+                Logical_N(ref a, out result);
             }
             else
             {
