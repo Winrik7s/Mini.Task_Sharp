@@ -16,12 +16,34 @@ namespace Mini.Task_Sharp
             Console.WriteLine("Result: " + result);
         }
 
-        //new function
+        static void Enc_Logical_XOR(ref int x, ref int key, out int dec)
+        {
+            int enc = x ^ key;
+            dec = enc ^ key;
+
+            Console.WriteLine("Encrypted number: " + enc);
+            Console.WriteLine("Decrypted number: " + dec);
+        }
+
+        static void Swap_Logical_XOR(ref int x, ref int y, out int resultA, out int resultB)
+        {
+            x = x ^ y;
+            y = x ^ y;
+            x = x ^ y;
+
+            resultA = x;
+            resultB = y;
+
+            Console.WriteLine("Result: " + x);
+            Console.WriteLine("Result: " + y);
+        }
 
         static void Main(string[] wsdctr)
         {
             byte sel;
             int result = 0;
+
+            int result2 = 0;
 
             Console.Write("Enter a: ");
             int a = Convert.ToInt32(Console.ReadLine());
@@ -32,7 +54,7 @@ namespace Mini.Task_Sharp
             Console.WriteLine();
 
             Console.WriteLine("Select: " + 
-            "1. Logical multiplication. 2. Logical addition.");
+            "1. Logical multiplication. 2. Logical addition, 3. Enc_Logical_XOR, 4. Swap_Logical_XOR, ");
             
             Console.Write("You: ");
             sel = Convert.ToByte(Console.ReadLine());
@@ -46,6 +68,14 @@ namespace Mini.Task_Sharp
             else if(sel == 2)
             {
                 Logical_A(ref a, ref b, out result);
+            }
+            else if(sel == 3)
+            {
+                Enc_Logical_XOR(ref a, ref b, out result);
+            }
+            else if(sel == 4)
+            {
+                Swap_Logical_XOR(ref a, ref b, out result, out result2);
             }
             else
             {
