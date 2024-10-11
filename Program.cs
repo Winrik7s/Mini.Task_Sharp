@@ -4,15 +4,15 @@ namespace Mini.Task_Sharp
 {
     public class Program
     {
-        static void Logical_M(ref int x, ref int y, out int result)
+        static void Logical_M(ref int x, ref int y, ref z, out int result)
         {
-            result = x & y;
+            result = x & y & z;
             Console.WriteLine("Result: " + result);
         }
 
-        static void Logical_A(ref int x, ref int y, out int result)
+        static void Logical_A(ref int x, ref int y, ref int z, out int result)
         {
-            result = x | y;
+            result = x | y | z;
             Console.WriteLine("Result: " + result);
         }
 
@@ -104,7 +104,7 @@ namespace Mini.Task_Sharp
             Console.WriteLine("7. Foo");
             
             Console.WriteLine();
-            
+
             Console.Write("You: ");
             sel = Convert.ToByte(Console.ReadLine());
             
