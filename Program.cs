@@ -56,11 +56,29 @@ namespace Mini.Task_Sharp
             Console.WriteLine("Result left: " + result);
         }
 
+        static void Foo(ref int x, ref int y, ref int z, out int result)
+        {
+            int value1 = 3;
+            int value2 = 2;
+            
+            int value3 = 1;
+            int result = 0b0000_00000;
+
+            result = result | value1;
+            result = result << 2;
+            
+            result = result | value2;
+            result = result << 2;
+
+            result = result | value3;
+            return result;
+        }
+
         static void Main(string[] wsdctr)
         {
             byte sel;
             int result = 0;
-
+            
             int result2 = 0;
 
             Console.Write("Enter a: ");
@@ -68,6 +86,9 @@ namespace Mini.Task_Sharp
 
             Console.Write("Enter b: ");
             int b = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Enter c: ");
+            int c = Cnvert.ToInt32(Console.ReadLine());
 
             Console.WriteLine();
 
@@ -108,6 +129,8 @@ namespace Mini.Task_Sharp
             {
                 Console.WriteLine("Error.");
             }
+
+            Console.WriteLine("Result: " + Foo());
 
             Console.ReadLine();
         }
