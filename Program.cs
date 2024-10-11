@@ -83,22 +83,27 @@ namespace Mini.Task_Sharp
             Console.Write("Enter b: ");
             int b = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("Enter c: ");
+            Console.Write("Enter c: ");
             int c = Convert.ToInt32(Console.ReadLine());
 
             Console.WriteLine();
 
             Console.WriteLine("Select:");
+
+            Console.WriteLine();
+
             Console.WriteLine("1. Logical multiplication");
-
             Console.WriteLine("2. Logical addition");
+
             Console.WriteLine("3. Enc_Logical_XOR");
-
             Console.WriteLine("4. Swap_Logical_XOR");
-            Console.WriteLine("5. Logical_N");
 
+            Console.WriteLine("5. Logical_N");
             Console.WriteLine("6. Shift");
+
             Console.WriteLine("7. Foo");
+            
+            Console.WriteLine();
             
             Console.Write("You: ");
             sel = Convert.ToByte(Console.ReadLine());
