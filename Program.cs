@@ -4,7 +4,7 @@ namespace Mini.Task_Sharp
 {
     public class Program
     {
-        static void Logical_M(ref int x, ref int y, ref z, out int result)
+        static void Logical_M(ref int x, ref int y, ref int z, out int result)
         {
             result = x & y & z;
             Console.WriteLine("Result: " + result);
@@ -112,11 +112,11 @@ namespace Mini.Task_Sharp
 
             if(sel == 1)
             {
-                Logical_M(ref a, ref b, out result);
+                Logical_M(ref a, ref b, ref c, out result);
             }
             else if(sel == 2)
             {
-                Logical_A(ref a, ref b, out result);
+                Logical_A(ref a, ref b, ref c, out result);
             }
             else if(sel == 3)
             {
