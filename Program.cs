@@ -58,27 +58,23 @@ namespace Mini.Task_Sharp
 
         static void Foo(ref int x, ref int y, ref int z, out int result)
         {
-            int value1 = 3;
-            int value2 = 2;
-            
-            int value3 = 1;
-            int result = 0b0000_00000;
+            result = 0b0000_00000;
 
-            result = result | value1;
+            result = result | x;
             result = result << 2;
             
-            result = result | value2;
+            result = result | y;
             result = result << 2;
 
-            result = result | value3;
-            return result;
+            result = result | z;
+            Console.WriteLine("Result: " + result);
         }
 
         static void Main(string[] wsdctr)
         {
             byte sel;
             int result = 0;
-            
+
             int result2 = 0;
 
             Console.Write("Enter a: ");
@@ -88,13 +84,21 @@ namespace Mini.Task_Sharp
             int b = Convert.ToInt32(Console.ReadLine());
 
             Console.WriteLine("Enter c: ");
-            int c = Cnvert.ToInt32(Console.ReadLine());
+            int c = Convert.ToInt32(Console.ReadLine());
 
             Console.WriteLine();
 
-            Console.WriteLine("Select: " + 
-            "1. Logical multiplication. 2. Logical addition, 3. Enc_Logical_XOR, " +
-            "4. Swap_Logical_XOR, 5. Logical_N, 6. Shift.");
+            Console.WriteLine("Select:");
+            Console.WriteLine("1. Logical multiplication");
+
+            Console.WriteLine("2. Logical addition");
+            Console.WriteLine("3. Enc_Logical_XOR");
+
+            Console.WriteLine("4. Swap_Logical_XOR");
+            Console.WriteLine("5. Logical_N");
+
+            Console.WriteLine("6. Shift");
+            Console.WriteLine("7. Foo");
             
             Console.Write("You: ");
             sel = Convert.ToByte(Console.ReadLine());
@@ -125,12 +129,14 @@ namespace Mini.Task_Sharp
             {
                 Shift(ref a, ref b, out result);
             }
+            else if(sel == 7)
+            {
+                Foo(ref a, ref b, ref c, out result);
+            }
             else
             {
                 Console.WriteLine("Error.");
             }
-
-            Console.WriteLine("Result: " + Foo());
 
             Console.ReadLine();
         }
