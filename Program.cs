@@ -17,8 +17,7 @@ namespace Mini.Task_Sharp
         static void Main(string[] wsdctr)
         {
             Account account = new Account();
-            account.Password = 5768;
-
+            
             Console.WriteLine(account.Password);
         }
     }
