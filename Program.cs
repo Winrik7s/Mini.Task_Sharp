@@ -4,20 +4,22 @@ namespace Mini.Task_Sharp
 {
     public class Program
     {
-        /*static void Enc_Logical_XOR(ref int x, ref int key, out int dec)
+        static int Enc(ref int x)
         {
+            int key = 24;
             int enc = x ^ key;
-            dec = enc ^ key;
 
-            Console.WriteLine("Encrypted number: " + enc);
-            Console.WriteLine("Decrypted number: " + dec);
+            return enc;
         }
-        */
 
         static void Main(string[] wsdctr)
         {
             Account account = new Account();
-            
+
+            Console.Write("Enter the password to log in: ");
+            int pass = Convert.ToInt32(Console.ReadLine());
+
+
             Console.WriteLine(account.Password);
         }
     }
