@@ -1,9 +1,10 @@
-using System;
-
-namespace Mini.Task_Sharp
+public class Account
 {
-    public class Account
+    private int password;
+
+    public int Password
     {
-        
+        get { return password; }
+        set { password = value; }
     }
 }
