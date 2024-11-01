@@ -17,6 +17,7 @@ public class Account
         { if(value == Encryption(1569))
             {
               password = value;
+              Console.Write("You have successfully logged in! ");
             }
             else
             {

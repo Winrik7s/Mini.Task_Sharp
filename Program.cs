@@ -19,7 +19,7 @@ namespace Mini.Task_Sharp
             Console.Write("Enter the password to log in: ");
             int pass = Convert.ToInt32(Console.ReadLine());
 
-
+            account.Password = Enc(ref pass);
             Console.WriteLine(account.Password);
         }
     }
