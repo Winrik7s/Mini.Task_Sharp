@@ -11,7 +11,8 @@ namespace Mini.Task_Sharp
             'G', 'g', 'H', 'h', 'I', 'i', 'J', 'j', 'K', 'k', 'L', 'l', 'M', 'm', 'N',
             'n', 'O', 'o', 'R', 'r', 'S', 's', 'T', 't', 'U', 'u', 'V', 'v', 'W', 'w',
             'X', 'x', 'Y', 'y', 'Z', 'z'};
-            string encMsg;
+
+            StringBuilder sb = new StringBuilder(str);
 
             for(int i = 0; i < abc.Length; i++)
             {
@@ -21,15 +22,13 @@ namespace Mini.Task_Sharp
                     {
                         i += 3;
 
-                        StringBuilder sb = new StringBuilder(str);
                         sb[j] = abc[i];
                         str = sb.ToString();
                     }
                 }
             }
 
-            encMsg = str;
-            return encMsg;
+            return str;
         }
 
         static void Main(string[] wsdctr)
