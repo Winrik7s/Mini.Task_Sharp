@@ -34,7 +34,10 @@ namespace Mini.Task_Sharp
 
         static void Main(string[] wsdctr)
         {
-            
+            Console.Write("Enter a message: ");
+            string msg = Console.ReadLine();
+
+            Console.WriteLine(Enc(msg));
         }
     }
 }
