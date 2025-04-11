@@ -22,6 +22,9 @@ namespace Mini.Task_Sharp
                     {
                         i += 3;
 
+                        if(i >= abc.Length)
+                        i -= abc.Length;
+
                         sb[j] = abc[i];
                         str = sb.ToString();
                     }
